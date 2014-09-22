@@ -11,8 +11,7 @@
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="http://progbites.com{{url}}"/>
-    <link rel="alternate" type="application/rss+xml" title="ProgBites" href="/rss/">
+
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{! Styles'n'Scripts }}
@@ -21,6 +20,12 @@
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{! ghost_head}}
+    <link rel="canonical" href="http://progbites.com{{url}}"/>
+    {{#if tag.slug}}
+      <link rel="alternate" type="application/rss+xml" title="ProgBites tagged {{tag.slug}}" href="/tag/{{tag.slug}}/rss/">
+    {{else}}
+      <link rel="alternate" type="application/rss+xml" title="ProgBites" href="/rss/">
+    {{/if}}
 </head>
 <body class="{{body_class}}">
 
