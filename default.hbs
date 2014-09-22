@@ -22,9 +22,16 @@
     {{! ghost_head}}
     <link rel="canonical" href="http://progbites.com{{url}}"/>
     {{#if tag.slug}}
-      <link rel="alternate" type="application/rss+xml" title="ProgBites tagged {{tag.slug}}" href="/tag/{{tag.slug}}/rss/">
+    <link rel="alternate" type="application/rss+xml" title="ProgBites tagged {{tag.slug}}" href="/tag/{{tag.slug}}/rss/"/>
     {{else}}
-      <link rel="alternate" type="application/rss+xml" title="ProgBites" href="/rss/">
+    <link rel="alternate" type="application/rss+xml" title="ProgBites" href="/rss/"/>
+    {{/if}}
+
+    {{#if pagination.prev}}
+    <link rel="prev" href="/page/{{pagination.prev}}/" />
+    {{/if}}
+    {{#if pagination.next}}
+    <link rel="next" href="/page/{{pagination.next}}/" />
     {{/if}}
 </head>
 <body class="{{body_class}}">
